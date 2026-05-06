@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../Navbar";
-import Footer from "../Footer";
 import { FaReact, FaNodeJs, FaFigma } from "react-icons/fa";
 import {
   SiExpress,
@@ -21,6 +20,7 @@ import TechTag from "./TechTag";
 import ProcessStep from "./ProcessStep";
 import ProjectCard from "./OwnProjectCard";
 import MainPage from "./MainPage";
+import JeevanDevLogo from "../Home/JeevanDevLogo";
 
 const ProjectsPage = () => {
 
@@ -106,12 +106,12 @@ const ProjectsPage = () => {
       <div className="relative z-10">
         <Navbar />
 
-<MainPage />
+        <MainPage />
         <main className="max-w-7xl mx-auto px-6 py-20">
 
           {/* Page Title */}
           <AnimatedSection className="text-center mb-10 mt-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-3">
+            <h1 className="text-4xl md:text-6xl font-bold mb-3 text-[#b9643b]">
               Client Projects
             </h1>
 
@@ -120,10 +120,7 @@ const ProjectsPage = () => {
             </p>
           </AnimatedSection>
 
-          <div className="flex gap-4 mb-20 justify-center" >
-            <button className="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">Client Cases</button>
-            <button className="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">Our Own Projects</button>
-          </div>
+
 
           {/* Projects Loop */}
           {projects.map((project, index) => (
@@ -134,7 +131,7 @@ const ProjectsPage = () => {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-6">
 
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                    <h2 className="text-3xl text-[#b9643b] md:text-4xl font-bold mb-2">
                       {project.title}
                     </h2>
 
@@ -165,7 +162,7 @@ const ProjectsPage = () => {
 
                     {/* Problem */}
                     <div>
-                      <h3 className="text-xl font-bold mb-3">
+                      <h3 className="text-xl text-[#b9643b] font-bold mb-3">
                         Client Problem
                       </h3>
 
@@ -176,7 +173,7 @@ const ProjectsPage = () => {
 
                     {/* Solution */}
                     <div>
-                      <h3 className="text-xl font-bold mb-3">
+                      <h3 className="text-xl text-[#b9643b] font-bold mb-3">
                         Our Solution
                       </h3>
 
@@ -187,7 +184,7 @@ const ProjectsPage = () => {
 
                     {/* Process */}
                     <div>
-                      <h3 className="text-xl font-bold mb-6">
+                      <h3 className="text-xl text-[#b9643b] font-bold mb-6">
                         Process
                       </h3>
 
@@ -209,7 +206,7 @@ const ProjectsPage = () => {
                   {/* RIGHT SIDE */}
                   <div>
 
-                    <h3 className="text-lg font-bold mb-4 uppercase tracking-wider text-sm">
+                    <h3 className="text-lg font-bold  text-[#b9643b] mb-4 uppercase tracking-wider text-sm">
                       Tech Stack
                     </h3>
 
@@ -229,7 +226,7 @@ const ProjectsPage = () => {
                     <div className="mt-8 mb-4 p-5 rounded-xl bg-gray-50 border border-gray-200">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                        <p className="text-xs font-semibold text-[#b9643b] uppercase tracking-widest">
                           Live Preview
                         </p>
                       </div>
@@ -261,7 +258,7 @@ const ProjectsPage = () => {
 
                     {/* Resources */}
                     <div className="border border-gray-200 rounded-xl p-5">
-                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+                      <p className="text-xs font-semibold text-[#b9643b] uppercase tracking-widest mb-3">
                         Project Resources
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -295,7 +292,7 @@ const ProjectsPage = () => {
 
               {/* Our Own Projects Section */}
               <AnimatedSection className="text-center mb-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-3 inline-block">
+                <h2 className="text-3xl md:text-5xl text-[#b9643b] font-bold mb-3 inline-block">
                   Our Own Projects
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto font-semibold">
@@ -310,7 +307,7 @@ const ProjectsPage = () => {
                 type="health"
                 title="Jeevan Dev"
                 subtitle="HEALTH & MEDICAL PLATFORM (ON-GOING)"
-                logo="/dev-tech/video/jeevan.gif"
+                logo="/video/jeevan.gif"
                 description="An innovative platform for reliable health information and expert medical articles. Currently expanding content and adding tele-consultation features."
                 features={[
                   "Expert Articles",
@@ -324,7 +321,7 @@ const ProjectsPage = () => {
                 type="service"
                 title="Service Mania"
                 subtitle="Service Marketplace"
-                logo="/dev-tech/img/Service Mania.png"
+                logo="img/Service Mania.png"
                 description="Connects users with verified professionals for home tutoring, gym training, caretaking, and physiotherapy. Features instant booking and WhatsApp support."
                 features={[
                   "Verified Professionals",
@@ -336,7 +333,7 @@ const ProjectsPage = () => {
 
           </div>
         </main>
-        <Footer />
+   <JeevanDevLogo />
       </div>
     </div>
   );

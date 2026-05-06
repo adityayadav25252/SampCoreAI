@@ -1,0 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap');
+
+
+
+body {
+
+  background: rgb(255, 255, 255);
+}
+
+
+.text {
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(60px, 12vw, 160px);
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.base {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #333;
+}
+
+.highlight {
+  color: #c06233;
+  mask-image: radial-gradient(
+    circle at var(--x, -999px) var(--y, -999px),
+    #000 0px,
+    #000 60px,
+    rgba(0,0,0,0.55) 100px,
+    rgba(0,0,0,0.18) 150px,
+    transparent 190px
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at var(--x, -999px) var(--y, -999px),
+    #000 0px,
+    #000 60px,
+    rgba(0,0,0,0.55) 100px,
+    rgba(0,0,0,0.18) 150px,
+    transparent 190px
+  );
+}

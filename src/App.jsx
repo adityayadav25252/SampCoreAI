@@ -9,6 +9,7 @@ import AboutPage from './components/Abouts/AboutPage';
 import ContactPage from './components/contact/ContactPage';
 import ProjectPage from './components/Project/ProjectPage';
 import ServicePage from './components/Service/ServicePage';
+import JeevanDevLogo from './components/Home/JeevanDevLogo';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <ServicesSection />
             <About />
             <ContactSection />
-            <Footer />
+            {/* <Footer /> */}
+            <JeevanDevLogo />
           </div>
         } />
 

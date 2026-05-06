@@ -6,6 +6,7 @@ import { ServiceCard } from "../ServicesSection";
 import ExpertiseSection from '../Abouts/ExpertiseSection';
 import DevelopmentProcess from '../Service/DevelopmentProcess';
 import Footer from '../Footer';
+import JeevanDevLogo from '../Home/JeevanDevLogo'
 
 
 const ServicePage = () => {
@@ -59,21 +60,23 @@ const ServicePage = () => {
         <Navbar />
         <section ref={heroRef} className="text-center relative pt-35  ">
           <section >
-            <span className="inline-block px-4 py-2 mb-2 text-xs font-medium tracking-widest uppercase bg-black text-white rounded-full">
+            <span className="inline-block px-4 py-2 mb-2 text-xs font-medium tracking-widest uppercase bg-[#b8643b] text-white rounded-full">
               Welcome to the Severice Page
             </span>
 
             <h1
               ref={titleRef}
-              className="text-6xl md:text-8xl lg:text-8xl mt-5 font-bold leading-[0.9] tracking-tighter mb-8"
+              className="text-6xl md:text-8xl lg:text-8xl mt-5 font-bold leading-[0.9] tracking-tighter mb-8 "
               style={{ perspective: '1000px' }}
             >
 
-              <span className="block  text-transparent stroke-text"
-                style={{ WebkitTextStroke: '2px black', color: 'transparent' }}>
-                {splitText("Professional ")}              {splitText("Technology")}
-              </span>
-              <span className="block ">{splitText("Services")}</span>
+           <span
+  className="block text-transparent stroke-text"
+  style={{ WebkitTextStroke: '2px #b8643b', color: 'transparent' }}
+>
+  {splitText("Professional ")} {splitText("Technology")}
+</span>
+              <span className="block  text-[#1b2b45]">{splitText("Services")}</span>
             </h1>
 
            <p className="max-w-xl mx-auto mb-10 text-xl text-gray-600 leading-relaxed">
@@ -81,9 +84,9 @@ const ServicePage = () => {
         </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-13 py-4 text-sm font-bold bg-black text-white rounded-lg hover:bg-gray-800 transition">
-                EXPLORE OUR WORK  →
-              </button>
+                <button className="px-13 py-4 text-sm font-bold bg-[#b9643b] text-white rounded-lg hover:bg-gray-800 transition">
+            EXPLORE OUR WORK  →
+          </button> 
 
               <button className="px-8 py-3 text-sm font-bold border border-black rounded-lg hover:bg-black hover:text-white transition flex items-center gap-2">
                 START YOUR PROJECT
@@ -92,11 +95,11 @@ const ServicePage = () => {
 
           </section>
 
-          <section className="relative min-h-screen text-black overflow-hidden selection:bg-black selection:text-white">
+          <section className="relative min-h-screen text-[#1b2b45] overflow-hidden selection:bg-black selection:text-white px-15">
             <div className="relative z-10 container mx-auto px-6 py-24 lg:py-32">
               <div className="flex flex-col items-center mb-16">
                 <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[0.9]">
-                  SERVICES <span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>FEATURES</span>
+                  SERVICES <span className="text-transparent" style={{ WebkitTextStroke: '2px #b8643b' }}>FEATURES</span>
                 </h1>
               </div>
 
@@ -107,10 +110,10 @@ const ServicePage = () => {
               </div>
             </div>
           </section>
-          <ExpertiseSection />
-          <DevelopmentProcess />
         </section>
-        <Footer />
+         
+          <DevelopmentProcess />
+        <JeevanDevLogo />
       </div>
 
       {/* Global Styles */}

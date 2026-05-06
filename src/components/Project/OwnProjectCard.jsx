@@ -65,18 +65,17 @@ const ProjectCard = ({ title, subtitle, description, features, logo, type }) => 
 
             <div className="relative w-full h-full rounded-2xl overflow-hidden  shadow-2xl transform transition-transform duration-500 group-hover/logo:scale-110 group-hover/logo:rotate-3">
               <img
-  src={logo}
-  alt={title}
-  className={`w-full h-full object-cover ${
-    type === "service" ? "animate-spin-slow" : ""
-  }`}
-/>
+                src={logo}
+                alt={title}
+                className={`w-full h-full object-cover ${type === "service" ? "animate-spin-slow" : ""
+                  }`}
+              />
 
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/logo:translate-x-full transition-transform duration-1000" />
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-center text-black tracking-tight">
+          <h1 className="text-4xl font-bold text-center text-[#b9643b] tracking-tight">
             {title}
           </h1>
 
@@ -103,7 +102,7 @@ const ProjectCard = ({ title, subtitle, description, features, logo, type }) => 
                 <div
                   key={index}
                   className={`relative flex items-center gap-2 px-4 py-3 rounded-xl border transition-all duration-500 cursor-pointer ${isActive
-                    ? "bg-black text-white border-black scale-110 shadow-lg"
+                    ? "bg-[#b9643b] text-white border-black scale-110 shadow-lg"
                     : "bg-white text-black/60 border-black/10 hover:border-black/30"
                     }`}
                   onClick={() => setActiveFeature(index)}
@@ -122,7 +121,7 @@ const ProjectCard = ({ title, subtitle, description, features, logo, type }) => 
 
         {/* Button */}
         <div className="flex justify-center">
-          <button className="group/btn relative px-8 py-4 bg-black text-white rounded-2xl font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.3)] hover:scale-105">
+          <button className="group/btn relative px-8 py-4 bg-[#1b2b45] text-white rounded-2xl font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.3)] hover:scale-105">
 
             <span className="absolute inset-0 bg-gradient-to-r from-gray-800 to-black translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
 

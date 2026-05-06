@@ -3,10 +3,11 @@ import {
   Mail, Phone, Clock, ArrowRight, CheckCircle, Send, 
   Shield, FileText, MessageSquare, AlertCircle, Users,
   Briefcase, Globe, HelpCircle, ChevronDown, Star,
-  Award, Zap, Lock, Coffee
+  Award, Zap, Lock, Coffee, Cpu   
 } from 'lucide-react';
 import Navbar from '../Navbar';
 import Footer from '../Footer'
+import JeevanDevLogo from '../Home/JeevanDevLogo';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -58,7 +59,7 @@ const ContactPage = () => {
     {
       question: "What happens after I submit the form?",
       answer: "You'll receive a confirmation email, and one of our project consultants will reach out to schedule a consultation call."
-    }
+    },
   ];
 
   const services = [
@@ -81,6 +82,11 @@ const ContactPage = () => {
       title: "Cloud Solutions",
       description: "Cloud migration, DevOps, infrastructure management",
       icon: Zap
+    },
+    {
+      title: "AI Automation",
+      description: "Chatbots, workflow automation, AI integrations, smart systems",
+      icon: Cpu
     }
   ];
 
@@ -185,10 +191,10 @@ const ContactPage = () => {
       <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         {/* Header with Stats */}
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-gray-100 rounded-full mb-6">
-            <span className="text-sm font-medium">⚡ 24/7 Support Available</span>
+          <div className="inline-block px-4 py-2 bg-[#b16848] rounded-full mb-6">
+            <span className="text-sm text-white font-medium">24/7 Support Available</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Let's Work Together</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#1b2b45 ] mb-4">Let's Work Together</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Have a project in mind? We're here to turn your ideas into reality. 
             Share your requirements and we'll get back to you within 12 hours.
@@ -199,24 +205,24 @@ const ContactPage = () => {
 
         {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <div className="p-6 border border-gray-200 rounded-xl hover:border-black transition-colors group backdrop-blur-sm bg-white/80">
+          <div className="p-6 border border-[#b16848] rounded-xl hover:border-black transition-colors group backdrop-blur-sm bg-white/80">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-[#b16848] group-hover:text-white transition-colors">
                 <Mail size={20} />
               </div>
               <div>
                 <h3 className="font-medium mb-1">Email Us</h3>
                 <a href="mailto:devcubetech@gmail.com" className="text-gray-600 hover:text-black text-sm">
-                  devcubetech@gmail.com
+                  sampcore@gmail.com
                 </a>
                 <p className="text-xs text-gray-400 mt-2">24h response guarantee</p>
               </div>
             </div>
           </div>
 
-          <div className="p-6 border border-gray-200 rounded-xl hover:border-black transition-colors group backdrop-blur-sm bg-white/80">
+          <div className="p-6 border border-[#b16848] rounded-xl hover:border-black transition-colors group backdrop-blur-sm bg-white/80">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-[#b16848] group-hover:text-white transition-colors">
                 <Phone size={20} />
               </div>
               <div>
@@ -229,9 +235,9 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="p-6 border border-gray-200 rounded-xl hover:border-black transition-colors group backdrop-blur-sm bg-white/80">
+          <div className="p-6 border border-[#b16848] rounded-xl hover:border-black transition-colors group backdrop-blur-sm bg-white/80">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-[#b16848] group-hover:text-white transition-colors">
                 <Coffee size={20} />
               </div>
               <div>
@@ -248,8 +254,8 @@ const ContactPage = () => {
           {/* Left Side - Detailed Info */}
           <div className="lg:col-span-2 space-y-8">
             {/* Services */}
-            <div className="border border-gray-200 rounded-2xl p-6 backdrop-blur-sm bg-white/80">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+            <div className="border border-[#b16848] rounded-2xl p-6 backdrop-blur-sm bg-white/80">
+              <h2 className="text-lg font-bold mb-4 text-[#b16848]  flex items-center gap-2">
                 <Briefcase size={18} />
                 Services We Offer
               </h2>
@@ -267,8 +273,8 @@ const ContactPage = () => {
             </div>
 
             {/* Why Choose Us */}
-            <div className="border border-gray-200 rounded-2xl p-6 backdrop-blur-sm bg-white/80">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+            <div className="border border-[#b16848] rounded-2xl p-6 backdrop-blur-sm bg-white/80">
+              <h2 className="text-lg font-bold mb-4 flex text-[#b16848] items-center gap-2">
                 <Star size={18} />
                 Why Choose Us
               </h2>
@@ -290,8 +296,8 @@ const ContactPage = () => {
             </div>
 
             {/* Policies */}
-            <div className="border border-gray-200 rounded-2xl p-6 backdrop-blur-sm bg-white/80">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+            <div className="border border-[#b16848] rounded-2xl p-6 backdrop-blur-sm bg-white/80">
+              <h2 className="text-lg font-bold mb-4 flex  text-[#b16848] items-center gap-2">
                 <Shield size={18} />
                 Our Commitments
               </h2>
@@ -315,8 +321,8 @@ const ContactPage = () => {
 
           {/* Right Side - Form */}
           <div className="lg:col-span-3">
-            <div className="border border-gray-200 rounded-2xl p-8 backdrop-blur-sm bg-white/80">
-              <h2 className="text-2xl font-bold mb-2">Send Your Requirements</h2>
+            <div className="border border-[#b16848] rounded-2xl p-8 backdrop-blur-sm bg-white/80">
+              <h2 className="text-2xl font-bold mb-2 text-[#b16848] ">Send Your Requirements</h2>
               <p className="text-gray-500 text-sm mb-8">
                 Fill in the details below and we'll get back to you within 24 hours.
               </p>
@@ -332,7 +338,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -344,7 +350,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-[#b16848]rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -359,7 +365,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -370,7 +376,7 @@ const ContactPage = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none focus:border-black transition-colors text-sm"
                       placeholder="Optional"
                     />
                   </div>
@@ -385,7 +391,7 @@ const ContactPage = () => {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm bg-white"
+                      className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none  transition-colors text-sm bg-white"
                     >
                       <option value="">Select a service</option>
                       <option value="web">Web Development</option>
@@ -402,7 +408,7 @@ const ContactPage = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm bg-white"
+                      className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none focus:border-black transition-colors text-sm bg-white"
                     >
                       <option value="">Select budget range</option>
                       <option value="<5k">Less than $5,000</option>
@@ -420,7 +426,7 @@ const ContactPage = () => {
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm bg-white"
+                    className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none focus:border-black transition-colors text-sm bg-white"
                   >
                     <option value="">Select expected timeline</option>
                     <option value="<1month">Less than 1 month</option>
@@ -439,7 +445,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors text-sm resize-none"
+                    className="w-full px-4 py-3 border border-[#b16848] rounded-lg focus:outline-none focus:border-black transition-colors text-sm resize-none"
                     placeholder="Please describe your project, goals, and any specific requirements..."
                   />
                 </div>
@@ -448,11 +454,11 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium flex items-center justify-center gap-2 disabled:opacity-70"
+                  className="w-full py-4 bg-[#b16848] text-white rounded-lg hover:bg-gray-800 transition-colors font-medium flex items-center justify-center gap-2 disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-[#b16848] border-t-transparent rounded-full animate-spin" />
                       Sending...
                     </>
                   ) : (
@@ -471,8 +477,8 @@ const ContactPage = () => {
             </div>
 
             {/* FAQ Section */}
-            <div className="mt-8 border border-gray-200 rounded-2xl p-6 backdrop-blur-sm bg-white/80">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+            <div className="mt-8 border border-[#b16848] rounded-2xl p-6 backdrop-blur-sm bg-white/80">
+              <h2 className="text-lg font-bold mb-4 text-[#b16848]  flex items-center gap-2">
                 <HelpCircle size={18} />
                 Frequently Asked Questions
               </h2>
@@ -508,7 +514,7 @@ const ContactPage = () => {
         </div>
       </main>
 
-      <Footer />
+     <JeevanDevLogo />
       </div>
     </div>
   );

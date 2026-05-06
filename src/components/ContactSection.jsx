@@ -15,44 +15,54 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 text-black
+      className="min-h-screen w-full text-black
  "
     >
-      <div className="max-w-5xl mx-auto  py-16 ">
+      <div className="max-w-6xl mx-auto  py-16 ">
 
-        {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-5xl font-medium uppercase tracking-wide font-[Bebas_Neue]">
-            GET IN TOUCH
-          </h2>
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-end mb-10 border-b-2 border-[#b9643b] pb-8 gap-8">
+          <div className="max-w-2xl">
+
+            <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[0.9]">
+              <span className="text-[#1b2c46]"> GET IN </span>
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: '2px #b9643b' }}
+              >
+                TOUCH
+              </span>
+            </h1>
+
+          </div>
         </div>
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-10 mt-10">
 
           {/* LEFT SIDE */}
-         <div className="rounded-3xl p-8 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1 transition" style={{border: '1px solid #b2b2b2'}}>
+         <div className="rounded-3xl p-8 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1 transition" style={{border: '1px solid #b9643b'}}>
 
-            <p className="text-xs tracking-[3px] uppercase border-b pb-2 mb-6">
+            <p className="text-xs tracking-[3px] uppercase text-[#b9643b] border-b  pb-2 mb-6">
               Reach Us Directly
             </p>
 
             <div className="space-y-4">
 
-              <div className="flex justify-between border-b pb-3">
-                <span className="text-xs text-gray-500 uppercase">
+              <div className="flex justify-between border-b pb-3 border-[#b9643b]">
+                <span className="text-xs text-gray-500 uppercase ">
                   Email
                 </span>
 
                 <a
                   href="mailto:devcubetech@gmail.com"
-                  className="font-semibold hover:underline"
+                  className="font-semibold hover:underline "
                 >
                   devcubetech@gmail.com
                 </a>
               </div>
 
-              <div className="flex justify-between border-b pb-3">
+              <div className="flex justify-between border-b pb-3 border-[#b9643b]">
                 <span className="text-xs text-gray-500 uppercase">
                   Phone
                 </span>
@@ -79,9 +89,9 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT SIDE FORM */}
-          <div className="rounded-3xl p-8 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1 transition" style={{border: '1px solid #b2b2b2'}}>
+          <div className="rounded-3xl p-8 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1 transition" style={{border: '1px solid #b9643b'}}>
 
-            <p className="text-xs tracking-[3px] uppercase border-b pb-2 mb-6">
+            <p className="text-xs tracking-[3px] uppercase border-b pb-2 mb-6 border-[#b9643b]">
               Send Us A Message
             </p>
 
@@ -95,7 +105,7 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Your full name"
                   required
-                  className="w-full font-semibold bg-transparent border-b border-gray-400 focus:border-black dark:focus:border-white outline-none py-2"
+                  className="w-full border-[#b9643b] font-semibold bg-transparent border-b  focus:border-black  outline-none py-2"
                 />
               </div>
 
@@ -107,7 +117,7 @@ export default function ContactSection() {
                   type="email"
                   placeholder="your@email.com"
                   required
-                  className="w-full font-semibold bg-transparent border-b border-gray-400 focus:border-black dark:focus:border-white outline-none py-2"
+                  className="w-full font-semibold bg-transparent border-b border-[#b9643b] focus:border-black  outline-none py-2"
                 />
               </div>
 
@@ -118,7 +128,7 @@ export default function ContactSection() {
                 <input
                   type="tel"
                   placeholder="+91 00000 00000"
-                  className="w-full font-semibold bg-transparent border-b border-gray-400 focus:border-black dark:focus:border-white outline-none py-2"
+                  className="w-full font-semibold bg-transparent border-b  border-[#b9643b]   focus:border-black  outline-none py-2"
                 />
               </div>
 
@@ -129,7 +139,7 @@ export default function ContactSection() {
                 <textarea
                   placeholder="Tell us about your project.."
                   required
-                  className="w-full font-semibold bg-transparent border-b border-gray-400 focus:border-black dark:focus:border-white outline-none py-2 min-h-[90px]"
+                  className="w-full font-semibold bg-transparent border-b border-[#b9643b] focus:border-black  outline-none py-2 min-h-[90px]"
                 />
               </div>
 

@@ -138,7 +138,6 @@ body.dark .ambient-particles {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   font-weight: 700;
   font-size: 15px;
   color: var(--text-primary);
@@ -148,9 +147,13 @@ body.dark .ambient-particles {
   transition: color var(--transition-smooth);
 }
 
+.core-text {
+  color: #bb633b;
+}
+
 .logo img {
-  width: 28px;
-  height: 28px;
+  width: 90px;
+  height: 50px;
 }
 
 /* ===== NAV LINKS ===== */
@@ -212,6 +215,7 @@ body.dark .ambient-particles {
   position: absolute;
   top: 0;
   left: 0;
+   color: #b9643b; 
 }
 
 .char {
@@ -224,6 +228,7 @@ body.dark .ambient-particles {
   align-items: center;
   justify-content: flex-end;
   gap: 16px;
+  
 }
 
 /* ===== DARK MODE BUTTON ===== */
@@ -621,7 +626,7 @@ body.dark .dark-btn {
   align-items: center;
   gap: 7px;
   padding: 9px 18px;          /* was: 9px 10px */
-  background: #111;
+  background: #b9643b;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -635,7 +640,7 @@ body.dark .dark-btn {
 }
 
 .letstalk-btn:hover {
-  background: #333;
+  background: #1b2c46;
   gap: 11px;
 }
 

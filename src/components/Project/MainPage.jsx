@@ -165,7 +165,7 @@ const MainPage = () => {
       <section ref={heroRef} className="text-center relative pt-36 px-6">
 
         {/* Badge */}
-        <span className="inline-block px-4 py-2 mb-8 text-xs font-medium tracking-widest uppercase bg-black text-white rounded-full">
+        <span className="inline-block px-4 py-2 mb-8 text-xs font-medium tracking-widest uppercase bg-[#b9643b] text-white rounded-full">
           Welcome to the Project Page
         </span>
 
@@ -175,12 +175,15 @@ const MainPage = () => {
           className="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter mb-8"
           style={{ perspective: '1000px' }}
         >
-          <span className="block stroke-text">
-            {splitText('Client')} {splitText(' & ')} {splitText('Own ')}
-          </span>
-          <span className="block">
-            {splitText('Projects')}
-          </span>
+         <span
+  className="block text-transparent"
+  style={{ WebkitTextStroke: '2px #b9643b' }}
+>
+  {splitText('Client')} {splitText(' & ')} {splitText('Own ')}
+</span>
+        <span className="block text-[#1b2b45]">
+  {splitText('Projects')}
+</span>
         </h1>
 
         {/* Sub-copy */}
@@ -190,7 +193,7 @@ const MainPage = () => {
 
         {/* CTAs */}
         <div className="flex flex-wrap justify-center gap-4 mb-24">
-          <button className="px-10 py-4 text-sm font-bold bg-black text-white rounded-lg hover:bg-gray-800 transition">
+          <button className="px-10 py-4 text-sm font-bold bg-[#b9643b] text-white rounded-lg hover:bg-gray-800 transition">
             Client Cases →
           </button>
           <button className="px-8 py-4 text-sm font-bold border border-black rounded-lg hover:bg-black hover:text-white transition flex items-center gap-2">

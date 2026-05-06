@@ -50,13 +50,13 @@ export const detailedServices = [
 const useScramble = (text, isHovering) => {
   const [display, setDisplay] = useState(text);
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\_#@&";
-  
+
   useEffect(() => {
     if (!isHovering) {
       setDisplay(text);
       return;
     }
-    
+
     let iteration = 0;
     const interval = setInterval(() => {
       setDisplay(
@@ -88,7 +88,7 @@ export const ServiceCard = ({ service, index }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const cardRef = useRef(null);
-  
+
   const scrambledTitle = useScramble(service.title, isHovering);
 
   const handleMouseMove = (e) => {
@@ -108,10 +108,12 @@ export const ServiceCard = ({ service, index }) => {
         setMousePos({ x: 0, y: 0 });
       }}
       onMouseMove={handleMouseMove}
-      className="group relative border-1 rounded-3xl border-black p-8 flex flex-col justify-between h-[400px] overflow-hidden"
+      className="group relative border rounded-2xl border-black bg-white p-8 flex flex-col justify-between h-[400px] overflow-hidden"
       style={{
         transform: `perspective(1000px) rotateX(${-mousePos.y}deg) rotateY(${mousePos.x}deg) scale(${isHovering ? 1.02 : 1})`,
-        boxShadow: isHovering ? "10px 10px 0px 0px rgba(0,0,0,1)" : "4px 4px 0px 0px rgba(0,0,0,1)",
+        boxShadow: isHovering
+          ? "10px 10px 0px 0px #b9643b"
+          : "4px 4px 0px 0px #b9643b",
       }}
     >
       {/* Top Section: ID & Icon */}
@@ -119,7 +121,7 @@ export const ServiceCard = ({ service, index }) => {
         <span className="font-mono text-sm border border-black px-2 py-1 bg-black text-white">
           {service.id}
         </span>
-       
+
       </div>
 
       {/* Middle Section: Title & Desc */}
@@ -149,33 +151,31 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="relative min-h-screen text-black overflow-hidden selection:bg-black selection:text-white"
-    > 
-      {/* Background Pattern - Dots */}
-      <div className="absolute inset-0 opacity-[0.1] pointer-events-none"
-           style={{ 
-             backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-             backgroundSize: '30px 30px'
-           }}>
-      </div>
+      className="relative min-h-screen text-black overflow-hidden selection:bg-black selection:text-white  px-15"
 
-      <div className="relative z-10 container mx-auto px-6 py-24 lg:py-4">
-        
+    >
+
+
+      <div className="relative z-10 container mx-auto px-6 py-24 lg:py-4 " >
+
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-20 border-b-2 border-black pb-8 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-end mb-10 border-b-2 border-[#b9643b] pb-8 gap-8">
           <div className="max-w-2xl">
-            <h2 className="font-mono text-sm font-bold mb-4 flex items-center gap-2">
 
-            </h2>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9]">
-              OUR   
-              <span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>SERVICE</span>
+            <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[0.9]">
+              <span className="text-[#1b2c46]">OUR</span>
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: '2px #b9643b' }}
+              >
+                SERVICE
+              </span>
             </h1>
+
           </div>
-          
         </div>
 
-        
+
         {/* Re-implementing Grid for the specific Card Component above */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
@@ -184,7 +184,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Marquee Footer */}
-       
+
 
       </div>
 

@@ -9,6 +9,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { gsap } from "gsap";
 import ExpertiseSection from "../Abouts/ExpertiseSection";
+import JeevanDevLogo from '../Home/JeevanDevLogo';
 
 const AboutPage = () => {
   const sectionRefs = useRef([]);
@@ -157,12 +158,12 @@ const AboutPage = () => {
           className="text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] tracking-tighter mb-8"
           style={{ perspective: '1000px' }}
         >
-          <span className="block ">{splitText("Transforming")}</span>
+          <span className="block text-[#1b2b45] ">{splitText("Transforming")}</span>
           <span className="block overflow-hidden text-transparent stroke-text" 
-            style={{ WebkitTextStroke: '2px black', color: 'transparent' }}>
+            style={{ WebkitTextStroke: '2px #b16848', color: 'transparent' }}>
             {splitText("Ideas into")}
           </span>
-          <span className="block ">{splitText("Digital Reality")}</span>
+          <span className="block text-[#1b2b45]  ">{splitText("Digital Reality")}</span>
         </h1>
 
         <p className="hero-subtitle text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
@@ -184,10 +185,10 @@ const AboutPage = () => {
                   className="opacity-0 translate-y-8 scale-95 transition-all duration-1000 group"
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <div className="bg-white p-10 rounded-3xl border border-gray-200 hover:border-black transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 relative overflow-hidden">
+                  <div className="bg-white p-10 rounded-3xl border border-[#b16848] hover:border-black transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-100 to-transparent rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-700"></div>
                     
-                    <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mb-8 relative z-10 group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-16 h-16 bg-[#b16848] text-white rounded-2xl flex items-center justify-center mb-8 relative z-10 group-hover:rotate-12 transition-transform duration-500">
                       <item.icon size={28} />
                     </div>
                     
@@ -210,61 +211,15 @@ const AboutPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Expertise Section with Grid Animation */}
       <ExpertiseSection />
-
-        {/* Values Section with Card Flip Effect */}
-        <section className="py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div 
-              ref={(el) => (sectionRefs.current[19] = el)}
-              className="text-center mb-16 opacity-0 translate-y-8 transition-all duration-1000"
-            >
-              <h2 className="text-4xl font-bold mb-4">What Drives Us</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Core values that shape everything we do
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-8">
-              {values.map((value, index) => {
-                const Icon = value.icon;
-                return (
-                  <div
-                    key={index}
-                    ref={(el) => (sectionRefs.current[index + 20] = el)}
-                    className="opacity-0 translate-y-8 transition-all duration-700 group perspective"
-                    style={{ transitionDelay: `${index * 150}ms` }}
-                  >
-                    <div className="relative bg-white p-8 rounded-2xl border border-gray-200 hover:border-black transition-all duration-500 hover:shadow-xl transform-gpu hover:scale-105 hover:-translate-y-2">
-                      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
-                      <div className="relative z-10 text-center">
-                        <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-black group-hover:text-white transition-all duration-500 group-hover:rotate-180">
-                          <Icon size={28} className="transition-transform duration-500 group-hover:scale-110" />
-                        </div>
-                        
-                        <h3 className="text-lg font-bold mb-3 group-hover:text-black transition-colors duration-300">
-                          {value.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {value.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </section>
+
+     
 
         {/* CTA Section with Parallax */}
         <section className="py-20 px-6 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-black transform -skew-y-3 scale-110"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black to-[#1b2b45] transform -skew-y-3 scale-110"></div>
           
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -281,7 +236,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <Footer />
+        <JeevanDevLogo />
       </div>
 
       <style jsx>{`

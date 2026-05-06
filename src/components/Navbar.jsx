@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './Navbar.css';
-import blackLogo from "../assets/img/black_logo.png";
-import whiteLogo from "../assets/img/white_logo.png";
+
+import SampCoreAiLogo from "../../public/img/SampCoreAiLogo.png"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
-  
+
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   const navLinksRef = useRef([]);
@@ -24,17 +24,17 @@ const Navbar = () => {
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
           const currentScroll = window.scrollY;
-          
+
           const height = document.documentElement.scrollHeight - window.innerHeight;
           const percent = (currentScroll / height) * 100;
           setProgress(percent);
-          
+
           if (currentScroll > lastScrollY.current && currentScroll > 100) {
             setIsVisible(false);
           } else {
             setIsVisible(true);
           }
-          
+
           lastScrollY.current = currentScroll;
           ticking.current = false;
         });
@@ -66,7 +66,7 @@ const Navbar = () => {
     }
 
     const sections = document.querySelectorAll('section');
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -88,49 +88,49 @@ const Navbar = () => {
 
     navLinksRef.current.forEach((link, index) => {
       if (!link) return;
-      
+
       const item = navItems[index];
       const text = item.label;
       link.innerHTML = '';
-      
+
       const wrapper = document.createElement('span');
       wrapper.className = 'text-wrapper';
-      
+
       const original = document.createElement('span');
       original.className = 'original-text';
-      
+
       const rolling = document.createElement('span');
       rolling.className = 'rolling-text';
-      
+
       text.split('').forEach((letter) => {
         const span1 = document.createElement('span');
         span1.className = 'char';
         span1.textContent = letter;
         original.appendChild(span1);
-        
+
         const span2 = document.createElement('span');
         span2.className = 'char';
         span2.textContent = letter;
         rolling.appendChild(span2);
       });
-      
+
       wrapper.appendChild(original);
       wrapper.appendChild(rolling);
       link.appendChild(wrapper);
-      
+
       const origChars = original.querySelectorAll('.char');
       const rollChars = rolling.querySelectorAll('.char');
-      
+
       gsap.set(rollChars, { y: '100%', opacity: 0 });
       gsap.set(origChars, { y: '0%', opacity: 1 });
-      
+
       const tl = gsap.timeline({ paused: true });
       tl.to(origChars, { y: '-100%', opacity: 0, duration: 0.3, stagger: 0.02 }, 0)
         .to(rollChars, { y: '0%', opacity: 1, duration: 0.3, stagger: 0.02 }, 0);
-      
+
       link.addEventListener('mouseenter', () => tl.play());
       link.addEventListener('mouseleave', () => tl.reverse());
-      
+
       link.gsapTimeline = tl;
     });
   }, []);
@@ -150,7 +150,7 @@ const Navbar = () => {
   const handleNavClick = (item, e) => {
     e.preventDefault();
     closeMobileMenu();
-    
+
     if (item.id === 'contact') {
       navigate('/contact');
     } else if (item.id === 'about') {
@@ -177,14 +177,7 @@ const Navbar = () => {
     }
   };
 
-  // Header cube click handler
-  const handleCubeClick = (e) => {
-    const cube = e.currentTarget;
-    cube.style.animation = 'rotateHeaderCube 0.5s linear infinite';
-    setTimeout(() => {
-      cube.style.animation = 'rotateHeaderCube 8s linear infinite';
-    }, 2000);
-  };
+
 
   // Let's Talk button handler
   const handleLetsTalk = () => {
@@ -203,8 +196,8 @@ const Navbar = () => {
   return (
     <>
       {/* Progress Bar */}
-      <div 
-        className="progress-bar" 
+      <div
+        className="progress-bar"
         style={{ width: `${progress}%` }}
       />
 
@@ -214,27 +207,10 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="logo">
-            <div className="header-cube" onClick={handleCubeClick}>
-              <div className="header-face header-front">
-                <img src={whiteLogo} alt="Logo" />
-              </div>
-              <div className="header-face header-back">
-                <img src={blackLogo} alt="Logo" />
-              </div>
-              <div className="header-face header-right">
-                <img src={whiteLogo} alt="Logo" />
-              </div>
-              <div className="header-face header-left">
-                <img src={blackLogo} alt="Logo" />
-              </div>
-              <div className="header-face header-top">
-                <img src={whiteLogo} alt="Logo" />
-              </div>
-              <div className="header-face header-bottom">
-                <img src={blackLogo} alt="Logo" />
-              </div>
-            </div>
-            <span>DEV CUBE TECH</span>
+            <img src={SampCoreAiLogo} alt="Logo" />
+          <span>
+  Samp<span className="core-text">Core</span> Ai
+</span>
           </div>
 
           {/* Nav Links */}
@@ -243,10 +219,10 @@ const Navbar = () => {
               <span>Navigation</span>
             </li>
             {navItems.map((item, index) => (
-              <li 
+              <li
                 key={item.id}
-                style={{ 
-                  transitionDelay: isMenuOpen ? `${0.1 + index * 0.05}s` : '0s' 
+                style={{
+                  transitionDelay: isMenuOpen ? `${0.1 + index * 0.05}s` : '0s'
                 }}
               >
                 <a
@@ -263,17 +239,17 @@ const Navbar = () => {
           </ul>
 
           {/* Right side */}
-<div className="nav-right">
-  <button className="letstalk-btn" onClick={handleLetsTalk}>
-    Let's Talk
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  </button>
-</div>
+          <div className="nav-right">
+            <button className="letstalk-btn" onClick={handleLetsTalk}>
+              Let's Talk
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMobileMenu}
           >
@@ -286,7 +262,7 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}
         onClick={closeMobileMenu}
       />

@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import DotBackground from "../components/Home/DotBackground";
 
 const HeroSection = () => {
 
@@ -13,31 +14,30 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center bg-white text-black">
+  <section 
+  onMouseMove={(e) => {
+    document.dispatchEvent(new CustomEvent("dot-move", {
+      detail: { x: e.clientX, y: e.clientY }
+    }));
+  }}
+ className="relative min-h-screen flex items-center justify-center text-center bg-transparent text-black"
+>
 
-      {/* Simple Dot Background */}
-      <div
-        className="fixed inset-0 opacity-80"
-        style={{
-          backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)",
-          backgroundSize: "30px 30px",
-        }}
-      ></div>
-
+ <DotBackground />
       {/* Content */}
       <div className="relative z-10 max-w-5xl px-2">
 
         {/* Badge */}
-        <span className="inline-block px-4 py-2 mb-8 text-xs font-medium tracking-widest uppercase bg-black text-white rounded-full">
+        <span className="inline-block px-4 py-2 mb-8 text-xs font-medium tracking-widest uppercase bg-[#b9643b] text-white rounded-full">
           Welcome to the Future
         </span>
 
         {/* Title */}
-        <h1 className="fantasy leading-[1.1] mb-6 text-[clamp(2.5rem,6vw,5rem)]">
+        <h1 className="fantasy text-[#1b2c46] leading-[1.1] mb-6 text-[clamp(2.5rem,6vw,5rem)]">
           WE BUILD{" "}
           <span 
             className="text-transparent stroke-text" 
-            style={{ WebkitTextStroke: "2px black", color: "transparent" }}
+            style={{ WebkitTextStroke: "2px #b9643b", color: "transparent" }}
           >
             {splitText("DIGITAL EXCELLENCE")}
           </span>{" "}
@@ -51,11 +51,11 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
-          <button className="px-13 py-4 text-sm font-bold bg-black text-white rounded-lg hover:bg-gray-800 transition">
+          <button className="px-13 py-4 text-sm font-bold bg-[#b9643b] text-white rounded-lg hover:bg-gray-800 transition">
             EXPLORE OUR WORK  →
           </button>
 
-          <button className="px-8 py-3 text-sm font-bold border border-black rounded-lg hover:bg-black hover:text-white transition flex items-center gap-2">
+          <button className="px-8 py-3 text-sm font-bold border border-[#b9643b] rounded-lg hover:bg-black hover:text-white transition flex items-center gap-2">
             START YOUR PROJECT
             <FontAwesomeIcon icon={faPaperPlane} />
           </button>
