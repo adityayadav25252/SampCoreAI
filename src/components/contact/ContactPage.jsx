@@ -212,8 +212,8 @@ const ContactPage = () => {
               </div>
               <div>
                 <h3 className="font-medium mb-1">Email Us</h3>
-                <a href="mailto:devcubetech@gmail.com" className="text-gray-600 hover:text-black text-sm">
-                  sampcore@gmail.com
+                <a href="mailto:contact@sampcoreai.com" className="text-gray-600 hover:text-black text-sm">
+                  contact@sampcoreai.com
                 </a>
                 <p className="text-xs text-gray-400 mt-2">24h response guarantee</p>
               </div>

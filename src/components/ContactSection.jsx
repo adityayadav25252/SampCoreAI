@@ -55,10 +55,10 @@ export default function ContactSection() {
                 </span>
 
                 <a
-                  href="mailto:devcubetech@gmail.com"
+                  href="mailto:contact@sampcoreai.com"
                   className="font-semibold hover:underline "
                 >
-                  devcubetech@gmail.com
+                contact@sampcoreai.com
                 </a>
               </div>
 
