@@ -11,10 +11,7 @@ import {
   SiRedis,
   SiDocker
 } from "react-icons/si";
-
-
 import { FaAws } from "react-icons/fa";
-
 import AnimatedSection from "./AnimatedSection";
 import TechTag from "./TechTag";
 import ProcessStep from "./ProcessStep";
@@ -23,7 +20,6 @@ import MainPage from "./MainPage";
 import JeevanDevLogo from "../Home/JeevanDevLogo";
 
 const ProjectsPage = () => {
-
   const projects = [
     {
       title: "Apna Ideal",
@@ -59,7 +55,6 @@ const ProjectsPage = () => {
         { name: "Figma", icon: <FaFigma /> }
       ]
     },
-
     {
       title: "Jira Utility",
       tagline: "Automation Tool • Private Beta",
@@ -94,6 +89,7 @@ const ProjectsPage = () => {
       ]
     }
   ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 relative overflow-hidden">
       <div
@@ -105,89 +101,74 @@ const ProjectsPage = () => {
       ></div>
       <div className="relative z-10">
         <Navbar />
-
         <MainPage />
-        <main className="max-w-7xl mx-auto px-6 py-20">
-
+        <main className="max-w-7xl  mx-auto sm:px-6 ">
           {/* Page Title */}
-          <AnimatedSection className="text-center mb-10 mt-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-3 text-[#b9643b]">
+          <AnimatedSection className="text-center mb-8 sm:mb-10 mt-8 sm:mt-10">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-[#b9643b]">
               Client Projects
             </h1>
-
-            <p className="text-gray-600 max-w-2xl mx-auto font-bold">
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto font-bold px-2">
               Real problems, tailored solutions — from discovery to deployment.
             </p>
           </AnimatedSection>
 
-
-
           {/* Projects Loop */}
           {projects.map((project, index) => (
             <AnimatedSection key={index} delay={index * 200}>
-              <section className="border border-gray-200 rounded-2xl p-8 md:p-12 bg-white shadow-sm mb-16 hover:border-gray-400 transition">
-
+              <section className="border border-gray-200 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 bg-white shadow-sm mb-12 sm:mb-16 hover:border-gray-400 transition">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-6">
-
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 sm:mb-10 md:mb-12 gap-4 sm:gap-6">
                   <div>
-                    <h2 className="text-3xl text-[#b9643b] md:text-4xl font-bold mb-2">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#b9643b] font-bold mb-2">
                       {project.title}
                     </h2>
-
-                    <p className="text-gray-500 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <p className="text-sm sm:text-base text-gray-500 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse flex-shrink-0"></span>
                       {project.tagline}
                     </p>
                   </div>
-
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition"
+                      className="border-2 border-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-black hover:text-white transition text-sm sm:text-base text-center w-full md:w-auto"
                     >
                       Visit Platform
                     </a>
                   )}
-
                 </div>
 
                 {/* Grid */}
-                <div className="grid lg:grid-cols-2 gap-12">
-
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
                   {/* LEFT SIDE */}
-                  <div className="space-y-10">
-
+                  <div className="space-y-8 sm:space-y-10">
                     {/* Problem */}
                     <div>
-                      <h3 className="text-xl text-[#b9643b] font-bold mb-3">
+                      <h3 className="text-lg sm:text-xl text-[#b9643b] font-bold mb-2 sm:mb-3">
                         Client Problem
                       </h3>
-
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                         {project.problem}
                       </p>
                     </div>
 
                     {/* Solution */}
                     <div>
-                      <h3 className="text-xl text-[#b9643b] font-bold mb-3">
+                      <h3 className="text-lg sm:text-xl text-[#b9643b] font-bold mb-2 sm:mb-3">
                         Our Solution
                       </h3>
-
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                         {project.solution}
                       </p>
                     </div>
 
                     {/* Process */}
                     <div>
-                      <h3 className="text-xl text-[#b9643b] font-bold mb-6">
+                      <h3 className="text-lg sm:text-xl text-[#b9643b] font-bold mb-4 sm:mb-6">
                         Process
                       </h3>
-
                       {project.process.map((step, i) => (
                         <ProcessStep
                           key={i}
@@ -198,45 +179,35 @@ const ProjectsPage = () => {
                           isLast={i === project.process.length - 1}
                         />
                       ))}
-
                     </div>
-
                   </div>
 
                   {/* RIGHT SIDE */}
                   <div>
-
-                    <h3 className="text-lg font-bold  text-[#b9643b] mb-4 uppercase tracking-wider text-sm">
+                    <h3 className="text-sm font-bold text-[#b9643b] mb-3 sm:mb-4 uppercase tracking-wider">
                       Tech Stack
                     </h3>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                       {project.tech.map((tech, i) => (
-                        <TechTag
-                          key={i}
-                          tech={tech}
-                          delay={i * 80}
-                        />
+                        <TechTag key={i} tech={tech} delay={i * 80} />
                       ))}
-
                     </div>
+
                     {/* Prototype */}
-                    {/* Prototype */}
-                    <div className="mt-8 mb-4 p-5 rounded-xl bg-gray-50 border border-gray-200">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        <p className="text-xs font-semibold text-[#b9643b] uppercase tracking-widest">
+                    <div className="mt-6 sm:mt-8 mb-4 sm:mb-5 p-4 sm:p-5 rounded-xl bg-gray-50 border border-gray-200">
+                      <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse flex-shrink-0"></span>
+                        <p className="text-[10px] sm:text-xs font-semibold text-[#b9643b] uppercase tracking-widest">
                           Live Preview
                         </p>
                       </div>
-                      <p className="text-gray-700 text-sm leading-relaxed">
+                      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                         {project.prototype}
                       </p>
                     </div>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-3 gap-3 mb-6">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6">
                       {[
                         { value: project.stats.users, label: project.stats.label },
                         { value: "98%", label: "Uptime" },
@@ -244,12 +215,12 @@ const ProjectsPage = () => {
                       ].map((stat, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 rounded-xl p-4"
+                          className="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4"
                         >
-                          <p className="text-2xl font-bold text-black tracking-tight">
+                          <p className="text-lg sm:text-2xl font-bold text-black tracking-tight">
                             {stat.value}
                           </p>
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">
                             {stat.label}
                           </p>
                         </div>
@@ -257,51 +228,41 @@ const ProjectsPage = () => {
                     </div>
 
                     {/* Resources */}
-                    <div className="border border-gray-200 rounded-xl p-5">
-                      <p className="text-xs font-semibold text-[#b9643b] uppercase tracking-widest mb-3">
+                    <div className="border border-gray-200 rounded-xl p-4 sm:p-5">
+                      <p className="text-[10px] sm:text-xs font-semibold text-[#b9643b] uppercase tracking-widest mb-2 sm:mb-3">
                         Project Resources
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {project.resources.map((res, i) => (
                           <button
                             key={i}
-                            className="text-sm px-4 py-2 rounded-full border border-gray-300 text-black hover:bg-black hover:text-white transition"
+                            className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-gray-300 text-black hover:bg-black hover:text-white transition"
                           >
                             {res.title}
                           </button>
                         ))}
                       </div>
                     </div>
-
                   </div>
-
-
-
-
                 </div>
-
               </section>
-
             </AnimatedSection>
           ))}
 
-
-          <div >
-
+          <div>
             <div className="w-full flex justify-center">
-
               {/* Our Own Projects Section */}
-              <AnimatedSection className="text-center mb-10">
-                <h2 className="text-3xl md:text-5xl text-[#b9643b] font-bold mb-3 inline-block">
+              <AnimatedSection className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#b9643b] font-bold mb-3 inline-block">
                   Our Own Projects
                 </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto font-semibold">
+                <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto font-semibold px-2">
                   Products we are building internally to solve real-world problems.
                 </p>
               </AnimatedSection>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-10 justify-center">
+            <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 justify-center">
               {/* Jeevan Dev */}
               <ProjectCard
                 type="health"
@@ -330,10 +291,9 @@ const ProjectsPage = () => {
                 ]}
               />
             </div>
-
           </div>
         </main>
-   <JeevanDevLogo />
+        <JeevanDevLogo />
       </div>
     </div>
   );

@@ -62,20 +62,20 @@ export default function JeevanDevLogo() {
         <div className="dot-line"></div>
         <span>DIGITAL EXCELLENCE</span>
       </div>
-    <div
-      className="container"
-      style={{
-        position: "relative",
-        height: "30vh",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        
-      }}
+      <div
+
+        style={{
+          position: "relative",
+          height: "30vh",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+
+        }}
       >
-      <h1 className="text base">SAMPCORE AI</h1>
-      <h1 className="text highlight" ref={hlRef}>SAMPCORE AI</h1>
+        <h1 className="text base">SAMPCORE AI</h1>
+        <h1 className="text highlight" ref={hlRef}>SAMPCORE AI</h1>
       </div>
     </div>
   );

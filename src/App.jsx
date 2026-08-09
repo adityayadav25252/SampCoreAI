@@ -22,7 +22,7 @@ function App() {
             <ServicesSection />
             <About />
             <ContactSection />
-            {/* <Footer /> */}
+           
             <JeevanDevLogo />
           </div>
         } />
