@@ -46,41 +46,79 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for active section
-  useEffect(() => {
-    if (location.pathname === '/contact') {
-      setActiveSection('contact');
-      return;
-    }
-    if (location.pathname === '/about') {
-      setActiveSection('about');
-      return;
-    }
-    if (location.pathname === '/projects') {
-      setActiveSection('projects');
-      return;
-    }
-    if (location.pathname === '/services') {
-      setActiveSection('services');
-      return;
-    }
+// Active section
+useEffect(() => {
+  // Other pages
+  if (location.pathname === "/contact") {
+    setActiveSection("contact");
+    return;
+  }
 
-    const sections = document.querySelectorAll('section');
+  if (location.pathname === "/about") {
+    setActiveSection("about");
+    return;
+  }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '-50% 0px -50% 0px' }
-    );
+  if (location.pathname === "/projects") {
+    setActiveSection("projects");
+    return;
+  }
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [location.pathname]);
+  if (location.pathname === "/services") {
+    setActiveSection("services");
+    return;
+  }
+
+  // Home page
+  if (location.pathname !== "/") return;
+
+  // Always Home when page is at top
+  if (window.scrollY < 150) {
+    setActiveSection("home");
+  }
+
+  const validSections = [
+    "home",
+    "services",
+    "projects",
+    "about",
+    "contact",
+  ];
+
+  const sections = Array.from(
+    document.querySelectorAll("section[id]")
+  ).filter((section) =>
+    validSections.includes(section.id)
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // If we are near the top, Home must be active
+      if (window.scrollY < 150) {
+        setActiveSection("home");
+        return;
+      }
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.target.id) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: "-35% 0px -55% 0px",
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  return () => {
+    observer.disconnect();
+  };
+}, [location.pathname]);
 
   // Rolling text animation setup
   useEffect(() => {
@@ -147,27 +185,43 @@ const Navbar = () => {
   };
 
   // Handle navigation
-  const handleNavClick = (item, e) => {
-    e.preventDefault();
-    closeMobileMenu();
+const handleNavClick = (item, e) => {
+  e.preventDefault();
+  closeMobileMenu();
 
-    if (item.id === 'contact') {
-      navigate('/contact');
-    } else if (item.id === 'about') {
-      navigate('/about');
-    } else if (item.id === 'projects') {
-      navigate('/projects');
-    } else if (item.id === 'services') {
-      navigate('/services');
-    } else if (location.pathname === '/') {
+  if (item.id === 'contact') {
+    navigate('/contact');
+    return;
+  }
+
+  if (item.id === 'about') {
+    navigate('/about');
+    return;
+  }
+
+  if (item.id === 'projects') {
+    navigate('/projects');
+    return;
+  }
+
+  if (item.id === 'services') {
+    navigate('/services');
+    return;
+  }
+
+  // Home / other sections
+  if (location.pathname === '/') {
+    setActiveSection(item.id);
+    scrollToSection(item.id);
+  } else {
+    navigate('/');
+
+    setTimeout(() => {
+      setActiveSection(item.id);
       scrollToSection(item.id);
-    } else {
-      navigate('/');
-      setTimeout(() => {
-        scrollToSection(item.id);
-      }, 100);
-    }
-  };
+    }, 150);
+  }
+};
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
