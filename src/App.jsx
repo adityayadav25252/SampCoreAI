@@ -10,6 +10,7 @@ import ContactPage from './components/contact/ContactPage';
 import ProjectPage from './components/Project/ProjectPage';
 import ServicePage from './components/Service/ServicePage';
 import JeevanDevLogo from './components/Home/JeevanDevLogo';
+import WWD from "./components/WWD"
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <ServicesSection />
             <About />
             <ContactSection />
-           
+           {/* <WWD /> */}
             <JeevanDevLogo />
           </div>
         } />
